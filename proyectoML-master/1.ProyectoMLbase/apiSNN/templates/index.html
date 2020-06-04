@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'stilo.css' %}">
+    <title>Prediccion de Flores</title>
+</head>
+<body>
+    {% block content %}
+    <form method="POST" enctype="multipart/form-data" action="/apiSNN/test/">
+        {% csrf_token %}
+        <input type="file" id="archivo" name="archivo"><br>
+        <input type="submit" value="MENSAJEAR">
+    </form>
+    {% endblock %}
+</body>
+</html>
